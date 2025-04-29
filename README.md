@@ -78,4 +78,8 @@ Para probar la API puedes:
 
 Todas las rutas siguen la estructura http://localhost:4000/api/libros. (Aquí encontrarás todos los libros que guardé en mi API)
 
+Una pequeña notita de un par de líneas en este readme para que cuando tenga el git hub de una profesional pueda mirar donde comencé y todo lo que sentí y agradecí.
+
+Ahora solo espero que todo esté bien. Gracias a adalab por enseñarnos a ser valientes y a enfrentarnos a errores y mirarlos de frente. Gracias Ana, por guiarnos en este camino y enseñarnos a confiar. No lo olvidaremos núnca. Y aquí mi último commit.
+
 
