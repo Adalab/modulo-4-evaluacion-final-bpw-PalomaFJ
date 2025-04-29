@@ -60,6 +60,6 @@ Para probar la API puedes:
 
 - Hacer un DELETE para eliminar un libro.
 
-Todas las rutas siguen la estructura http://localhost:4000/api/libros.
+Todas las rutas siguen la estructura http://localhost:4000/api/libros. (Aquí encontrarás todos los libros que guardé)
 
 
