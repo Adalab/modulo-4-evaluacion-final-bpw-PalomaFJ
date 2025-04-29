@@ -42,13 +42,29 @@ METODO -> DELETE // ENDPOINT -> /api/libros/:id // DESCRIPCION -> Eliminar un li
 La API se conecta a una base de datos MySQL alojada en Aiven.
 Los datos de conexión (host, user, password, database y port) están configurados directamente en el index.js.
 
-¿Por qué uso rejectUnauthorized: false en la conexión? 
+🔒 ¿Por qué uso rejectUnauthorized: false en la conexión? 
 Cuando me conecto a Aiven, necesito usar un certificado SSL.
 Por defecto, Node.js rechazba los certificados que no son de una autoridad reconocida (self-signed certificates).
 Como Aiven usa un certificado propio para la conexión segura, he tenido que añadir esta configuración en la conexión.
 Con eso, le digo a Node.js que acepte el certifcado de Aiven aunque no sea oficial, y así la conexión es segura y he podido trabajar sin errores de autenticación SSL. Esto me llevó un buen rato la verdad porque no contaba con Aiven ni con tener que usar la autenticación, pero ahora ya sé algo más y aunque me haya llevado un rato, todo ha merecido la pena para poder desarrollar mi API y poder probarla sin errores.
 
-PRUEBAS CON POSTMAN
+📂 VARIABLES DE ENTORNO (.env)
+Durante el desarrollo, he utilizado un archivo .env para guardar las variables sensibles como el usuario (user), la contraseña (password) y el puerto (port) de la base de datos.
+
+Esto lo hice para no escribir directamente los datos privados en el código. De esta forma, si el proyecto se sube a GitHub o se comparte, la información sensible no se muestra.
+
+En el .env guardé valores como estos:
+
+DB_HOST=********
+DB_PORT=*******
+DB_USER=*******
+DB_PASSWORD=********
+DB_DATABASE=******
+
+Y en el código (index.js) uso process.env.DB_USER, process.env.DB_PASSWORD y process.env.PORT para conectarme de forma segura.
+Así protejo mis datos y el proyecto queda más profesional.
+
+📬PRUEBAS CON POSTMAN
 
 Para probar la API puedes:
 
@@ -60,6 +76,6 @@ Para probar la API puedes:
 
 - Hacer un DELETE para eliminar un libro.
 
-Todas las rutas siguen la estructura http://localhost:4000/api/libros. (Aquí encontrarás todos los libros que guardé)
+Todas las rutas siguen la estructura http://localhost:4000/api/libros. (Aquí encontrarás todos los libros que guardé en mi API)
 
 
